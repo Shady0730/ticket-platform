@@ -1,0 +1,33 @@
+Operatore
+
+id PK, INT, UNIQUE , NOT NULL
+nome VARCHAR(255), NOT NULL
+email VARCHAR(255), NOT NULL
+password VARCHAR(255), NOT NULL
+stato ENUM, NOT NULL
+ruolo ENUM, NOT NULL
+
+
+Ticket
+
+id  PK , INT, UNIQUE, NOT NULL
+titolo VARCHAR(255), NOT NULL
+descrizione VARCHAR(255), NOT NULL
+stato ENUM, NOT NULL
+operatoreId VARCHAR(255), FK, NOT NULL
+categoriaId VARCHAR(255), FK, NOT NULL
+
+
+Categoria
+
+id PK, INT, UNIQUE, NOT NULL
+nome VARCHAR(255)
+
+
+Nota
+
+id PK,INT, UNIQUE, NOT NULL
+testo VARCHAR(255), NOT NULL
+dataCreazione (LocalDateTime)
+autore VARCHAR(255), NOT NULL
+ticketId FK, INT, NOT NULL
